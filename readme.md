@@ -12,7 +12,6 @@ Este projeto automatiza a geração e o envio de casos de teste para o [Qase.io]
 
 ```
 .
-├── .env                # Variáveis de ambiente (não subir para o git)
 ├── .example.env        # Exemplo de variáveis para configuração
 ├── .gitignore
 ├── main.py             # Script principal
