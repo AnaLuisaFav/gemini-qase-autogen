@@ -1,8 +1,8 @@
 from qase.mappings import PRIORITY_MAP, SEVERITY_MAP, TYPE_MAP, BEHAVIOR_MAP, LAYER_MAP
 from qase.utils import get_mapped_value, list_to_text
 
-def build_case_payload(case):
-    return {
+def build_case_payload(case, suite_id=None):
+    payload = {
         "title": case["title"][:255],
         "description": list_to_text(case.get("description")),
         "preconditions": list_to_text(case.get("preconditions")),
@@ -22,3 +22,8 @@ def build_case_payload(case):
             } for step in case["steps"]
         ]
     }
+
+    if suite_id:
+        payload["suite_id"] = suite_id
+
+    return payload
